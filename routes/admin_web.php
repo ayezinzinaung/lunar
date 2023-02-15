@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('admin/login', 'Auth\AdminLoginController@showLoginForm');
+Route::post('admin/login', 'Auth\AdminLoginController@login')->name('admin.login');
+
 Route::prefix('admin')->middleware('auth:admin_user')->group(function () {
     Route::get('/' , function(){
         return 'admin Page';

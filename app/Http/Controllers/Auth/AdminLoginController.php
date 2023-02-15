@@ -42,7 +42,7 @@ class AdminLoginController extends Controller
 
     protected function guard()
     {
-        return Auth::guard();
+        return Auth::guard('admin_user');
     }
 
     public function showLoginForm()
