@@ -21,13 +21,8 @@
                 </div>
             </div>
             <div class="app-header__menu">
-                <span>
-                    <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-                        <span class="btn-icon-wrapper">
-                            <i class="fa fa-ellipsis-v fa-w-6"></i>
-                        </span>
-                    </button>
-                </span>
+                @include('components.menu_search.menu_search_button')
+                
             </div>
             <div class="ui-theme-settings">
                 <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
@@ -310,33 +305,17 @@
             </div> 
             <div class="app-header__content">
                 <div class="app-header-left">
-                    <div class="search-wrapper">
-                        <div class="input-holder">
-                            <input type="text" class="search-input" placeholder="Type to search">
-                            <button class="search-icon"><span></span></button>
-                        </div>
-                        <button class="close"></button>
-                    </div>
-                    <ul class="header-menu nav">
-                        <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-database"> </i>
-                                Statistics
-                            </a>
+                    <ul class="header-megamenu nav">
+                        <li class="btn-group nav-item">
+                            @include('components.menu_search.menu_search_button')
                         </li>
                         <li class="btn-group nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-edit"></i>
-                                Projects
+                            <a class="nav-link text-dark">
+                                <i class="fas fa-bell mr-2"></i>
+                                Notification
                             </a>
                         </li>
-                        <li class="dropdown nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-cog"></i>
-                                Settings
-                            </a>
-                        </li>
-                    </ul>        
+                    </ul>
                 </div>
 
                 <div class="app-header-right">
@@ -351,19 +330,20 @@
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true"
-                                            class="dropdown-menu dropdown-menu-right">
-                                                <button type="button" tabindex="0" class="dropdown-item">
-                                                   User Account</button>
-                                            <div tabindex="-1" class="dropdown-divider"></div>
-                                            {{--  <a href="{{ route('admin.logout') }}" tabindex="0" class="dropdown-item" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                                     Logout
-                                                </a>
-
-                                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                            </form>  --}}
-                                        </div>
+                                        class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="{{ url('/admin/user/' . Auth::user()->id) }}">
+                                            <i class="fas fa-user mr-2"></i> Profile
+                                        </a>
+                                        <div class="divider"></div>
+                                        <a class="dropdown-item"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="fas fa-sign-out-alt mr-2"></i> {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form"  method="POST"
+                                            style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">

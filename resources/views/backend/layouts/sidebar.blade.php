@@ -35,7 +35,7 @@
                 <li class="app-sidebar__heading">Dashboards</li>
                 <li>
                     <a href="{{route('admin.home')}}" class="@yield('home-active')">
-                        <i class="metismenu-icon pe-7s-display2"></i>
+                        <i class="metismenu-icon pe-7s-home"></i>
                         Dashboard
                     </a>
                 </li>
