@@ -360,3 +360,5 @@
                 </div>
             </div>
         </div>
+
+        @include('components.menu_search.menu_search_modal')
