@@ -1,4 +1,4 @@
-<h1></h1>
-<a href="">About</a>
-<a href="">Contact</a>
-<a href="">List</a>
+<h1>{{__('profile.welcome')}}</h1>
+<a href="">{{__('profile.about')}}</a>
+<a href="">{{__('profile.contact')}}</a>
+<a href="">{{__('profile.list')}}</a>
