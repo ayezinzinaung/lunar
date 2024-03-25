@@ -39,6 +39,12 @@
                         Dashboard
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin.profile.index')}}" class="@yield('profile-active')">
+                        <i class="metismenu-icon pe-7s-user"></i>
+                        Profile
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
