@@ -18,4 +18,5 @@ Route::prefix('admin')->name('admin.')->namespace('Backend')->middleware('auth:a
 
     // --- Admin User Profile---
     Route::resource('profile', 'ProfileController');
+    Route::get('profile/datatables/ssd','ProfileController@ssd');
 });

@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title','Travelog' )
+@section('title','Admin User' )
 @section('profile-active','mm-active')
 @section('content')
 <div class="app-page-title">
@@ -12,14 +12,12 @@
         </div>
     </div>
 </div>
-<div class="py-3">
-    <div class="d-inline-block">
-        @can('add_user')
-        <a href="{{ route('admin.profile.create') }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add
-            User</a>
-        @endcan
-    </div>
-</div>
+<div class="pt-3">
+    <a href="{{ route('admin.profile.create') }}" class="btn btn-primary">
+        <i class="fas fa-plus-circle"></i>
+        Add Admin Users
+    </a>
+ </div>
 <section class="content pb-3">
     <div class="row">
         <div class="col-lg-12">
@@ -65,7 +63,7 @@
                     [10, 25, 50, 100],
                     ['10 rows', '25 rows', '50 rows', '100 rows']
                 ],
-                ajax: "/admin/profile/index",
+                ajax: '/admin/profile/datatables/ssd',
                 columns: [
                     {
                         data: "plus-icon",
