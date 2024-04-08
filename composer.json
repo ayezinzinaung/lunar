@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "3.*",
         "proengsoft/laravel-jsvalidation": "^4.7",
+        "stancl/tenancy": "^3.6",
         "yajra/laravel-datatables-oracle": "^9.0"
     },
     "require-dev": {
